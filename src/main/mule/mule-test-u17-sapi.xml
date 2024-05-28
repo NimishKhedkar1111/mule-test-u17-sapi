@@ -14,5 +14,6 @@
 		<logger level="INFO" doc:name="Logger" doc:id="dae7e0c4-0e9b-468d-8952-c8a37c5fb736" message="API Started 3rd"/>
 		<logger level="INFO" doc:name="Logger" doc:id="0e4babf6-0050-447a-8900-f028f76f975e" message="4th Logger"/>
 		<logger level="INFO" doc:name="Logger" doc:id="addac9e4-136c-4e8b-821a-a560c4119867" message="5th Logger"/>
+		<logger level="INFO" doc:name="Logger" doc:id="95def88e-8073-4fe8-bbd3-8a2c6dd3bef9" message="API started 6th time"/>
 	</flow>
 </mule>
