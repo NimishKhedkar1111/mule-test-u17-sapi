@@ -66,6 +66,5 @@ jobs:
         timeout 1800s mvn deploy -DmuleDeploy \
          -Dmule.artifact=$artifactName \
          -Danypoint.username="$USERNAME" \
-         -Danypoint.password="$PASSWORD"
-         -Dhttp.socketTimeout=60000 \
-         -Dhttp.connectionTimeout=60000 && break || sleep 20;
+         -Danypoint.password="$PASSWORD" \
+         -Dhttp.connectionTimeout=12000 && break || sleep 20;
