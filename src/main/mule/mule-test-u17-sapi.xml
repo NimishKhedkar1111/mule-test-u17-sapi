@@ -1,8 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<mule xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd">
+<mule xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd">
+	<http:listener-config name="HTTP_Listener_config" doc:name="HTTP Listener config" doc:id="cd7e1ec6-4185-476e-9c13-7641f9fda513" >
+		<http:listener-connection host="0.0.0.0" port="8081" />
+	</http:listener-config>
+	<flow name="mule-test-u17-sapiFlow1" doc:id="7c79d564-fcfb-42a5-89ce-d9ebb24f6861" >
+		<http:listener doc:name="Listener" doc:id="df329243-cf1f-4cf4-84e1-cdeee5ab717d" config-ref="HTTP_Listener_config" path="/test"/>
+		<logger level="INFO" doc:name="Logger" doc:id="e403b206-6145-44c9-aac6-14932d2fc87e" message="API Started 2nd" />
+	</flow>
 	<flow name="mule-test-u17-sapiFlow" doc:id="7d218a01-b500-4000-9788-d904491bf815" >
 		<scheduler doc:name="Scheduler" doc:id="8ceb0ef7-6548-49f0-94ae-4375f6b8b821" >
 			<scheduling-strategy >
@@ -10,7 +18,6 @@
 			</scheduling-strategy>
 		</scheduler>
 		<logger level="INFO" doc:name="Logger" doc:id="cf5174c1-2435-44a5-b6ed-c166077aae7a" message="API Started in the Develop Env"/>
-		<logger level="INFO" doc:name="Logger" doc:id="e403b206-6145-44c9-aac6-14932d2fc87e" message="API Started 2nd"/>
 		<logger level="INFO" doc:name="Logger" doc:id="dae7e0c4-0e9b-468d-8952-c8a37c5fb736" message="API Started 3rd"/>
 		<logger level="INFO" doc:name="Logger" doc:id="0e4babf6-0050-447a-8900-f028f76f975e" message="4th Logger"/>
 		<logger level="INFO" doc:name="Logger" doc:id="addac9e4-136c-4e8b-821a-a560c4119867" message="5th Logger"/>
