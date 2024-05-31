@@ -10,6 +10,7 @@ http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/htt
 	<flow name="mule-test-u17-sapiFlow1" doc:id="7c79d564-fcfb-42a5-89ce-d9ebb24f6861" >
 		<http:listener doc:name="Listener" doc:id="df329243-cf1f-4cf4-84e1-cdeee5ab717d" config-ref="HTTP_Listener_config" path="/test"/>
 		<logger level="INFO" doc:name="Logger" doc:id="e403b206-6145-44c9-aac6-14932d2fc87e" message="API Started 2nd" />
+		<logger level="INFO" doc:name="Logger" doc:id="d5535b93-c92a-456c-80fd-22585714845b" />
 	</flow>
 	<flow name="mule-test-u17-sapiFlow" doc:id="7d218a01-b500-4000-9788-d904491bf815" >
 		<scheduler doc:name="Scheduler" doc:id="8ceb0ef7-6548-49f0-94ae-4375f6b8b821" >
